@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Kristóf - Személyes Oldal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #3f51b5;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #ddd;
+    }
+
+    .tabs button {
+      background-color: inherit;
+      border: none;
+      outline: none;
+      padding: 14px 20px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 16px;
+    }
+
+    .tabs button:hover {
+      background-color: #ccc;
+    }
+
+    .tabs button.active {
+      background-color: #fff;
+      border-bottom: 3px solid #3f51b5;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 20px;
+      background-color: white;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .profile-img {
+      display: block;
+      margin: 30px auto;
+      max-width: 90%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Kristóf</h1>
+</header>
+
+<img src="kristóf.png" alt="Kristóf képe" class="profile-img">
+
+<div class="tabs">
+  <button class="tab-link active" onclick="openTab(event, 'szemelyiseg')">Személyiség</button>
+  <button class="tab-link" onclick="openTab(event, 'altalanos')">Általános adatok</button>
+</div>
+
+<div id="szemelyiseg" class="tab-content active">
+  <h2>Személyiség</h2>
+  <p>Kristóf egy kíváncsi, barátságos és céltudatos személy. Szenvedélyesen érdeklődik a technológia és a tudomány iránt, és mindig nyitott az új kihívásokra.</p>
+</div>
+
+<div id="altalanos" class="tab-content">
+  <h2>Általános adatok</h2>
+  <ul>
+    <li>Név: Kristóf</li>
+    <li>Kor: 28</li>
+    <li>Lakhely: Budapest, Magyarország</li>
+    <li>Foglalkozás: Szoftvermérnök</li>
+  </ul>
+</div>
+
+<script>
+  function openTab(evt, tabId) {
+    const tabContents = document.querySelectorAll(".tab-content");
+    const tabLinks = document.querySelectorAll(".tab-link");
+
+    tabContents.forEach(tab => tab.classList.remove("active"));
+    tabLinks.forEach(link => link.classList.remove("active"));
+
+    document.getElementById(tabId).classList.add("active");
+    evt.currentTarget.classList.add("active");
+  }
+</script>
+
+</body>
+</html>
